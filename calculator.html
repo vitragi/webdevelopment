@@ -10,44 +10,32 @@
     
         $(document).ready(function(){
             
-            //addition
-            $("#add").click(function(){
-                
+            $("button").click(function(){
+                //Appoint variables to values in number fields
                 var a = $("#no1").val();
                 var b = $("#no2").val();
                 
-                $("#opn").text("+");
-                $("#ans").text(parseInt(a) + parseInt(b));
-            });
-            
-            //subtraction
-            $("#sub").click(function(){
-                
-                var a = $("#no1").val();
-                var b = $("#no2").val();
-                
-                $("#opn").text("-");
-                $("#ans").text(parseInt(a) - parseInt(b));
-            });
-            
-            //multiplication
-            $("#mul").click(function(){
-                
-                var a = $("#no1").val();
-                var b = $("#no2").val();
-                
-                $("#opn").text("*");
-                $("#ans").text(parseInt(a) * parseInt(b));
-            });
-            
-            //division
-            $("#div").click(function(){
-                
-                var a = $("#no1").val();
-                var b = $("#no2").val();
-                
-                $("#opn").text("/");
-                $("#ans").text(parseInt(a) / parseInt(b));
+                switch(this.id){    //check what button is pressed
+                        
+                    case "add":     //addition
+                        $("#opn").text("+");
+                        $("#ans").text(parseInt(a) + parseInt(b));
+                        break;
+                        
+                    case "sub":     //subtraction
+                        $("#opn").text("-");
+                        $("#ans").text(parseInt(a) - parseInt(b));
+                        break;
+                        
+                    case "mul":     //multiplication
+                        $("#opn").text("*");
+                        $("#ans").text(parseInt(a) * parseInt(b));
+                        break;
+                    case "div":     //division
+                        $("#opn").text("/");
+                        $("#ans").text(parseInt(a) / parseInt(b));
+                        break;
+                              }
             });
             
         });
@@ -58,15 +46,24 @@
 
 <body>
 
+    <!--    First number  -->
     <input id="no1" type="number" placeholder="number one"/>
+
+    <!--    What operation shall be performed   -->
     <p id="opn"></p>
+
+    <!--    Second Number   -->
     <input id="no2" type="" placeholder="number two"/>
+
+    <!--    Answer  -->
     <p> = </p><p id="ans"></p>
+    
     <br/>
     <br/>
     
     <div id="d1">
-    
+
+        <!--        Buttons for selecting operations    -->
         <button id="add">add</button>
         <button id="sub">sub</button>
         <button id="mul">mul</button>
