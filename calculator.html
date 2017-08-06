@@ -10,10 +10,46 @@
     
         $(document).ready(function(){
             
+            //addition
             $("#add").click(function(){
                 
-                $("p").append("zoozoo");
+                var a = $("#no1").val();
+                var b = $("#no2").val();
+                
+                $("#opn").text("+");
+                $("#ans").text(parseInt(a) + parseInt(b));
             });
+            
+            //subtraction
+            $("#sub").click(function(){
+                
+                var a = $("#no1").val();
+                var b = $("#no2").val();
+                
+                $("#opn").text("-");
+                $("#ans").text(parseInt(a) - parseInt(b));
+            });
+            
+            //multiplication
+            $("#mul").click(function(){
+                
+                var a = $("#no1").val();
+                var b = $("#no2").val();
+                
+                $("#opn").text("*");
+                $("#ans").text(parseInt(a) * parseInt(b));
+            });
+            
+            //division
+            $("#div").click(function(){
+                
+                var a = $("#no1").val();
+                var b = $("#no2").val();
+                
+                $("#opn").text("/");
+                $("#ans").text(parseInt(a) / parseInt(b));
+            });
+            
         });
     
     </script>
@@ -23,11 +59,19 @@
 <body>
 
     <input id="no1" type="number" placeholder="number one"/>
-    
+    <p id="opn"></p>
     <input id="no2" type="" placeholder="number two"/>
+    <p> = </p><p id="ans"></p>
+    <br/>
+    <br/>
     
-    <button id="add">add</button>
+    <div id="d1">
     
-    <p>Answer: </p>
+        <button id="add">add</button>
+        <button id="sub">sub</button>
+        <button id="mul">mul</button>
+        <button id="div">div</button>
+    
+    </div>
 
 </body>
